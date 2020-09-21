@@ -1,5 +1,4 @@
 ﻿//блочная арифметика
-//добавл/удаление, произведение перебор,ввод не циферок/через пробел
 
 using System;
 using System.ComponentModel;
@@ -39,7 +38,7 @@ namespace Stack
             textTop.Text = stack.PrintTop();
 
             //дно
-            textBottom.Text = stack2.Bottom();
+            textBottom.Text = stack.Bottom();
 
             //печать инверсии стека
             stack2.Inversion(stack);
@@ -54,7 +53,7 @@ namespace Stack
 
             textTop.Text = stack.PrintTop();
 
-            textBottom.Text = stack2.Bottom();
+            textBottom.Text = stack.Bottom();
 
 
             //инверсия и печать
@@ -223,6 +222,7 @@ namespace Stack
 
         public class Stack2 : Stack
         {
+
             public void Inversion(Stack stack)
             {
                 int i, j;
