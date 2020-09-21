@@ -50,6 +50,10 @@
             this.textBottom = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textIn = new System.Windows.Forms.RichTextBox();
+            this.buttonSearchMin = new System.Windows.Forms.Button();
+            this.buttonSearchMax = new System.Windows.Forms.Button();
+            this.buttonSearchSum = new System.Windows.Forms.Button();
+            this.buttonSearchMulti = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pushButton
@@ -162,7 +166,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Druk Text Wide Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(19, 356);
+            this.label5.Location = new System.Drawing.Point(23, 275);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(185, 23);
             this.label5.TabIndex = 10;
@@ -171,7 +175,7 @@
             // textMin
             // 
             this.textMin.Font = new System.Drawing.Font("Druk Text Wide Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textMin.Location = new System.Drawing.Point(19, 382);
+            this.textMin.Location = new System.Drawing.Point(23, 301);
             this.textMin.Name = "textMin";
             this.textMin.Size = new System.Drawing.Size(222, 28);
             this.textMin.TabIndex = 9;
@@ -182,7 +186,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Druk Text Wide Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(336, 356);
+            this.label6.Location = new System.Drawing.Point(340, 275);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(196, 23);
             this.label6.TabIndex = 12;
@@ -191,7 +195,7 @@
             // textMax
             // 
             this.textMax.Font = new System.Drawing.Font("Druk Text Wide Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textMax.Location = new System.Drawing.Point(336, 382);
+            this.textMax.Location = new System.Drawing.Point(340, 301);
             this.textMax.Name = "textMax";
             this.textMax.Size = new System.Drawing.Size(218, 28);
             this.textMax.TabIndex = 11;
@@ -202,7 +206,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Druk Text Wide Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(19, 487);
+            this.label7.Location = new System.Drawing.Point(23, 406);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 23);
             this.label7.TabIndex = 14;
@@ -211,7 +215,7 @@
             // textSum
             // 
             this.textSum.Font = new System.Drawing.Font("Druk Text Wide Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textSum.Location = new System.Drawing.Point(19, 513);
+            this.textSum.Location = new System.Drawing.Point(23, 432);
             this.textSum.Name = "textSum";
             this.textSum.Size = new System.Drawing.Size(222, 28);
             this.textSum.TabIndex = 13;
@@ -222,7 +226,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Druk Text Wide Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(336, 487);
+            this.label8.Location = new System.Drawing.Point(340, 406);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(187, 23);
             this.label8.TabIndex = 16;
@@ -231,7 +235,7 @@
             // textMulti
             // 
             this.textMulti.Font = new System.Drawing.Font("Druk Text Wide Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textMulti.Location = new System.Drawing.Point(336, 513);
+            this.textMulti.Location = new System.Drawing.Point(340, 432);
             this.textMulti.Name = "textMulti";
             this.textMulti.Size = new System.Drawing.Size(218, 28);
             this.textMulti.TabIndex = 15;
@@ -278,6 +282,66 @@
             this.textIn.TabIndex = 19;
             this.textIn.Text = "";
             // 
+            // buttonSearchMin
+            // 
+            this.buttonSearchMin.BackColor = System.Drawing.Color.Black;
+            this.buttonSearchMin.FlatAppearance.BorderSize = 0;
+            this.buttonSearchMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearchMin.Font = new System.Drawing.Font("Druk Text Wide Bold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearchMin.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonSearchMin.Location = new System.Drawing.Point(23, 346);
+            this.buttonSearchMin.Name = "buttonSearchMin";
+            this.buttonSearchMin.Size = new System.Drawing.Size(222, 30);
+            this.buttonSearchMin.TabIndex = 21;
+            this.buttonSearchMin.Text = "Поиск";
+            this.buttonSearchMin.UseVisualStyleBackColor = false;
+            this.buttonSearchMin.Click += new System.EventHandler(this.buttonSearchMin_Click);
+            // 
+            // buttonSearchMax
+            // 
+            this.buttonSearchMax.BackColor = System.Drawing.Color.Black;
+            this.buttonSearchMax.FlatAppearance.BorderSize = 0;
+            this.buttonSearchMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearchMax.Font = new System.Drawing.Font("Druk Text Wide Bold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearchMax.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonSearchMax.Location = new System.Drawing.Point(340, 346);
+            this.buttonSearchMax.Name = "buttonSearchMax";
+            this.buttonSearchMax.Size = new System.Drawing.Size(218, 30);
+            this.buttonSearchMax.TabIndex = 22;
+            this.buttonSearchMax.Text = "Поиск";
+            this.buttonSearchMax.UseVisualStyleBackColor = false;
+            this.buttonSearchMax.Click += new System.EventHandler(this.buttonSearchMax_Click);
+            // 
+            // buttonSearchSum
+            // 
+            this.buttonSearchSum.BackColor = System.Drawing.Color.Black;
+            this.buttonSearchSum.FlatAppearance.BorderSize = 0;
+            this.buttonSearchSum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearchSum.Font = new System.Drawing.Font("Druk Text Wide Bold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearchSum.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonSearchSum.Location = new System.Drawing.Point(25, 480);
+            this.buttonSearchSum.Name = "buttonSearchSum";
+            this.buttonSearchSum.Size = new System.Drawing.Size(222, 30);
+            this.buttonSearchSum.TabIndex = 23;
+            this.buttonSearchSum.Text = "Поиск";
+            this.buttonSearchSum.UseVisualStyleBackColor = false;
+            this.buttonSearchSum.Click += new System.EventHandler(this.buttonSearchSum_Click);
+            // 
+            // buttonSearchMulti
+            // 
+            this.buttonSearchMulti.BackColor = System.Drawing.Color.Black;
+            this.buttonSearchMulti.FlatAppearance.BorderSize = 0;
+            this.buttonSearchMulti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearchMulti.Font = new System.Drawing.Font("Druk Text Wide Bold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearchMulti.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonSearchMulti.Location = new System.Drawing.Point(336, 480);
+            this.buttonSearchMulti.Name = "buttonSearchMulti";
+            this.buttonSearchMulti.Size = new System.Drawing.Size(222, 30);
+            this.buttonSearchMulti.TabIndex = 24;
+            this.buttonSearchMulti.Text = "Поиск";
+            this.buttonSearchMulti.UseVisualStyleBackColor = false;
+            this.buttonSearchMulti.Click += new System.EventHandler(this.buttonSearchMulti_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -286,6 +350,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1101, 596);
+            this.Controls.Add(this.buttonSearchMulti);
+            this.Controls.Add(this.buttonSearchSum);
+            this.Controls.Add(this.buttonSearchMax);
+            this.Controls.Add(this.buttonSearchMin);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textIn);
             this.Controls.Add(this.label9);
@@ -341,6 +409,10 @@
         private System.Windows.Forms.TextBox textBottom;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RichTextBox textIn;
+        private System.Windows.Forms.Button buttonSearchMin;
+        private System.Windows.Forms.Button buttonSearchMax;
+        private System.Windows.Forms.Button buttonSearchSum;
+        private System.Windows.Forms.Button buttonSearchMulti;
     }
 }
 
