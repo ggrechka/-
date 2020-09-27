@@ -2,6 +2,7 @@
 
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Stack
@@ -23,16 +24,22 @@ namespace Stack
             try
             {
                 //добавление элемента в стек
+                stack.IsFull();
                 stack.PushTop(Convert.ToInt32(elementTextBox.Text));
-            } catch (FormatException ex)
-            {
-                MessageBox.Show(
-                    $"{ex.Message}",
-                    "Предупреждение",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                ) ;
             }
+            catch (IndexOutOfRangeException exx)
+            {
+
+                DialogResult result = MessageBox.Show(
+                       "Стек переполнен. Увеличить его размер на 10?",
+                       "Предупреждение",
+                       MessageBoxButtons.YesNo,
+                       MessageBoxIcon.Warning
+                   );
+                if (result == DialogResult.Yes)
+                    stack.ResizeTop(stack.items.Length + 10);
+            }
+
             //печать элементов
             elementsTextBox.Text = stack.Print();
             textTop.Text = stack.PrintTop();
@@ -90,7 +97,7 @@ namespace Stack
         {
             public int[] items;
             public int top;
-            public const int n = 10;
+            public int n = 10;
 
             public Stack()
             {
@@ -104,15 +111,17 @@ namespace Stack
                 return top == 0;
             }
 
+            //проверка на переполнение
+            public void IsFull()
+            {
+                if (top == n)
+                    throw new IndexOutOfRangeException();
+ 
+            }
+
             //добавление элемента
             public void PushTop(int item)
             {
-                if (top == items.Length)
-                {
-                    ResizeTop(items.Length + 10);
-                    MessageBox.Show("Стек переполнен, его размер увеличен");
-                }
-
                 items[top++] = item;
             }
             //изменение размера стека
@@ -122,6 +131,7 @@ namespace Stack
                 for (int i = 0; i < top; ++i)
                     tempItems[i] = items[i];
                 items = tempItems;
+                n += 10;
             }
             //удаление элемента
             public void PopTop()
@@ -250,8 +260,8 @@ namespace Stack
             public void Inversion(Stack stack)
             {
                 int i, j;
-                if (stack.top > 10)
-                    this.ResizeTop(top);
+                if (stack.top > n)
+                    this.ResizeTop(this.items.Length+10);
                 for (i = stack.top - 1, j = 0; i > -1; i--, j++)
 
                     this.items[j] = stack.items[i];
