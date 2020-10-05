@@ -27,8 +27,6 @@ namespace StackTests
             int x = 5;
             s.Push(x, s.top);
             s.top++;
-            
-
             s.Pop(s,s.top);
 
             Assert.AreEqual(0, s.items[s.top]);
