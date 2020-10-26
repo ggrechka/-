@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pushButton = new System.Windows.Forms.Button();
             this.popButton = new System.Windows.Forms.Button();
-            this.elementsTextBox = new System.Windows.Forms.RichTextBox();
+            this.textStack = new System.Windows.Forms.RichTextBox();
             this.elementTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textTop = new System.Windows.Forms.TextBox();
@@ -60,6 +60,8 @@
             this.TextS2 = new System.Windows.Forms.TextBox();
             this.PushPop = new System.Windows.Forms.Button();
             this.PopTop = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textTest = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // pushButton
@@ -92,15 +94,15 @@
             this.popButton.UseVisualStyleBackColor = false;
             this.popButton.Click += new System.EventHandler(this.popButton_Click);
             // 
-            // elementsTextBox
+            // textStack
             // 
-            this.elementsTextBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.elementsTextBox.Font = new System.Drawing.Font("Druk Text Wide Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.elementsTextBox.Location = new System.Drawing.Point(715, 100);
-            this.elementsTextBox.Name = "elementsTextBox";
-            this.elementsTextBox.Size = new System.Drawing.Size(770, 90);
-            this.elementsTextBox.TabIndex = 2;
-            this.elementsTextBox.Text = "";
+            this.textStack.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.textStack.Font = new System.Drawing.Font("Druk Text Wide Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textStack.Location = new System.Drawing.Point(715, 100);
+            this.textStack.Name = "textStack";
+            this.textStack.Size = new System.Drawing.Size(770, 90);
+            this.textStack.TabIndex = 2;
+            this.textStack.Text = "";
             // 
             // elementTextBox
             // 
@@ -252,7 +254,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Druk Text Wide Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(1143, 205);
+            this.label9.Location = new System.Drawing.Point(1155, 205);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(130, 23);
             this.label9.TabIndex = 18;
@@ -428,6 +430,31 @@
             this.PopTop.UseVisualStyleBackColor = false;
             this.PopTop.Click += new System.EventHandler(this.PopTop_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Druk Text Wide Bold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(715, 403);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(770, 54);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "Запустить Unit-Тест";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textTest
+            // 
+            this.textTest.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.textTest.Font = new System.Drawing.Font("Druk Text Wide Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textTest.Location = new System.Drawing.Point(715, 293);
+            this.textTest.Name = "textTest";
+            this.textTest.Size = new System.Drawing.Size(770, 90);
+            this.textTest.TabIndex = 36;
+            this.textTest.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -436,6 +463,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1497, 729);
+            this.Controls.Add(this.textTest);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.PushPop);
             this.Controls.Add(this.PopTop);
             this.Controls.Add(this.label11);
@@ -464,7 +493,7 @@
             this.Controls.Add(this.textTop);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.elementTextBox);
-            this.Controls.Add(this.elementsTextBox);
+            this.Controls.Add(this.textStack);
             this.Controls.Add(this.popButton);
             this.Controls.Add(this.pushButton);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -482,7 +511,7 @@
 
         private System.Windows.Forms.Button pushButton;
         private System.Windows.Forms.Button popButton;
-        private System.Windows.Forms.RichTextBox elementsTextBox;
+        private System.Windows.Forms.RichTextBox textStack;
         private System.Windows.Forms.TextBox elementTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textTop;
@@ -511,6 +540,8 @@
         private System.Windows.Forms.TextBox TextS2;
         private System.Windows.Forms.Button PushPop;
         private System.Windows.Forms.Button PopTop;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox textTest;
     }
 }
 
