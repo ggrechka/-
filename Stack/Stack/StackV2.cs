@@ -9,7 +9,8 @@ public class StackEdition : OneStack
     {
         bot=n-1;
     }
-
+    // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - //
+    // пустота и полнота
     public bool IsEmptyBot()//сверху пусто
     {
         return (bot == n-1);
@@ -30,7 +31,8 @@ public class StackEdition : OneStack
         if (Math.Abs(bot - this.top) == 1)
             throw new IndexOutOfRangeException();
     }
-
+    // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - //
+    // изменение стека
     public void Resize(int size) // изменение размера
     {
         int[] tempItems = new int[size];
@@ -44,34 +46,6 @@ public class StackEdition : OneStack
         this.n += 10;
         this.bot += 10;
     }
-
-
-    public string PrintStackEdition2()
-    {
-        if (IsEmptyTwo())
-            return "Стек пуст";
-        else
-        {
-            int i;
-            string s = "";
-            if (top != 0)
-            {
-                for (i = 0; i < top-1; i++)
-                    s += Convert.ToString(items[i]) + ", ";
-                s += Convert.ToString(items[top-1]);
-                if (this.bot != this.n-1)
-                    s += ",";
-            }
-            if (this.bot != this.n-1)
-            {
-                for (i = bot+1; i < this.items.Length-1; i++)
-                    s += Convert.ToString(items[i]) + ", ";
-                s += Convert.ToString(items[this.items.Length-1]);
-            }
-            return s;
-        }
-    }
-
 
     public void DoPushBot(int item)
     {
@@ -98,7 +72,48 @@ public class StackEdition : OneStack
         IsFullStack();
     }
 
-  
+    // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - // - //
+    // вывод
+    public string PrintStackEdition2()
+    {
+        if (IsEmptyTwo())
+            return "Стек пуст";
+        else
+        {
+            int i;
+            string s = "";
+            if (top != 0)
+            {
+                for (i = 0; i < top-1; i++)
+                    s += Convert.ToString(items[i]) + ", ";
+                s += Convert.ToString(items[top-1]);
+                if (this.bot != this.n-1)
+                    s += ",";
+            }
+            if (this.bot != this.n-1)
+            {
+                for (i = bot+1; i < this.items.Length-1; i++)
+                    s += Convert.ToString(items[i]) + ", ";
+                s += Convert.ToString(items[this.items.Length-1]);
+            }
+            return s;
+        }
+    }
+
+    //вывод верхушки
+    public override int PrintBot()
+    {
+        if (bot == n-1)
+            return 0;
+        return items[bot-1];
+    }
+
+    //вывод другой верхушки
+    public void PrintTop2()
+    {
+        PrintTop();
+    }
+
 }
 
        

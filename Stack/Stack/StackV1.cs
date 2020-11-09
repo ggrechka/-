@@ -100,13 +100,15 @@ public class OneStack
         return items[number];
     }
 
-    public int PrintBot()
+    public virtual int PrintBot()
     {
-        if (top == 0)
+        if (top ==0)
             return 0;
-        return items[0];
+        int number = top - 1;
+        return items[number];
     }
 
+    // только для этого стека
     public double SearchSuperF(string x)
     {
         //создаю переменную с определённым значением 
