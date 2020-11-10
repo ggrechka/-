@@ -1,4 +1,4 @@
-﻿
+﻿//checked b  вторую
 using System;
 using System.Windows.Forms;
 
@@ -41,6 +41,14 @@ namespace Stack
                 if (result == DialogResult.Yes)
                     stack.ResizeTop(stack.items.Length + 10);
             }
+            catch
+            {
+                MessageBox.Show(
+                    "Ошибка ввода: вводите числа",
+                    "Предупреждение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning) ;
+            }
            
             //печать элементов
             textStack.Text = stack.Print();
@@ -59,6 +67,7 @@ namespace Stack
                 stack.DoPop();
                 textStack.Text = stack.Print();
                 textTop.Text = Convert.ToString(stack.PrintTop());
+                textBottom.Text = Convert.ToString(stack.PrintBot());
             }
             catch (Exception)
             {
@@ -97,9 +106,9 @@ namespace Stack
 
         private void buttonSearchMulti_Click(object sender, EventArgs e)
         {
-            if (stack.top == 0)
-                textMulti.Text = "Не найдено";
-            textMulti.Text = Convert.ToString(stack.SearchSuperF("multi"));
+                if (stack.top == 0)
+                    textMulti.Text = "Не найдено";
+                textMulti.Text = Convert.ToString(stack.SearchSuperF("multi"));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -130,11 +139,18 @@ namespace Stack
                 if (results == DialogResult.Yes)
                     stackEdition.Resize(stackEdition.items.Length + 10);
             }
+            catch
+            {
+                MessageBox.Show(
+                   "Ошибка ввода: вводите числа",
+                   "Предупреждение",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Warning);
+            }
             //печать элементов
-            textmodstack.Text = stackEdition.PrintStackEdition2();
-
-
+            textmodstack.Text = stackEdition.PrintStackEdition2();                
         }
+        
 
         private void PopBottom_Click(object sender, EventArgs e)
         {
@@ -194,6 +210,14 @@ namespace Stack
                    );
                 if (results == DialogResult.Yes)
                     stackEdition.Resize(stackEdition.items.Length + 10);
+            }
+            catch
+            {
+                MessageBox.Show(
+                   "Ошибка ввода: вводите числа",
+                   "Предупреждение",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Warning);
             }
             //печать элементов
             textmodstack.Text = stackEdition.PrintStackEdition2();

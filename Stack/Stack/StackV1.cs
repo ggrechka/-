@@ -104,51 +104,58 @@ public class OneStack
     {
         if (top ==0)
             return 0;
-        int number = top - 1;
-        return items[number];
+        return items[0];
     }
 
     // только для этого стека
-    public double SearchSuperF(string x)
+    public Int64 SearchSuperF(string x)
     {
         //создаю переменную с определённым значением 
-        double parametr = 0;
-        switch (x)
+       
+        Int64 parametr = 0;
+
+        
+            switch (x)
         {
             case "min":
-                parametr = Double.MaxValue;
+                parametr = Int64.MaxValue;
                 break;
 
             case "max":
-                parametr = Double.MinValue;
+                parametr = Int64.MinValue;
                 break;
 
             case "multi":
                 parametr = 1;
                 break;
         }
-        //в зависимости от параметра считаю, что нужно
-        for (int i = 0; i < top; i++)
+        checked
         {
-            switch (x)
+            //в зависимости от параметра считаю, что нужно
+            for (int i = 0; i < top; i++)
             {
-                case "min":
-                    if (items[i] < parametr)
-                        parametr = items[i];
-                    break;
 
-                case "max":
-                    if (items[i] > parametr)
-                        parametr = items[i];
-                    break;
+                switch (x)
+                {
+                    case "min":
+                        if (items[i] < parametr)
+                            parametr = items[i];
+                        break;
 
-                case "sum":
-                    parametr += items[i];
-                    break;
+                    case "max":
+                        if (items[i] > parametr)
+                            parametr = items[i];
+                        break;
 
-                case "multi":
-                    parametr *= items[i];
-                    break;
+                    case "sum":
+                        parametr += items[i];
+                        break;
+
+                    case "multi":
+                        parametr *= items[i];
+
+                        break;
+                }
             }
         }
 
